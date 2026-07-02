@@ -1,0 +1,133 @@
+:root {
+  --primary-blue: #0b1c5a;
+  --komatsu-blue: #0033a0;
+  --kowa-yellow: #ffb81c;
+  --bg-light: #f4f6f9;
+  --text-dark: #333333;
+  --text-gray: #666666;
+  --white: #ffffff;
+  --border-color: #e0e0e0;
+  --success-green: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: var(--white);
+  min-height: 100vh;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 3px solid var(--komatsu-blue);
+  background-color: var(--white);
+  position: relative;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 30%;
+  height: 3px;
+  background-color: var(--kowa-yellow);
+}
+.logo-komatsu {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--komatsu-blue);
+  letter-spacing: -1px;
+}
+.logo-kowa {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.logo-kowa span {
+  display: inline-block;
+  background-color: var(--kowa-yellow);
+  color: var(--primary-blue);
+  padding: 2px 6px;
+  margin-right: 4px;
+  border-radius: 2px;
+}
+
+/* Base Page Styles */
+.page-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+.btn-primary:hover {
+  background-color: var(--komatsu-blue);
+}
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--komatsu-blue);
+}

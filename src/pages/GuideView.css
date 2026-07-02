@@ -1,0 +1,127 @@
+.guide-container {
+  padding-bottom: 20px;
+}
+.guide-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.guide-subtitle {
+  font-weight: normal;
+  display: block;
+}
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Step Card Styles */
+.step-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.step-image-container {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.step-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.image-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.image-text {
+  font-size: 10px;
+  color: var(--text-gray);
+  text-align: center;
+  padding: 0 4px;
+}
+.step-content {
+  flex: 1;
+}
+.step-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.check-icon {
+  color: var(--success-green);
+  background-color: rgba(40, 167, 69, 0.1);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.step-desc {
+  font-size: 12px;
+  color: var(--text-gray);
+  line-height: 1.4;
+}
+
+.help-section {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: rgba(0, 51, 160, 0.05);
+  border-radius: 8px;
+}
+.help-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-video {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-video:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
