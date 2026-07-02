@@ -68,8 +68,11 @@ const RegisterView = () => {
         
         <div className="form-card">
           {success && (
-            <div className="success-msg">
-              ✅ ¡Registro guardado exitosamente! Volviendo al inicio...
+            <div className="success-container">
+              <img src="/images/success.png" alt="Éxito" className="success-image" />
+              <div className="success-msg">
+                ✅ ¡Registro guardado exitosamente! Volviendo al inicio...
+              </div>
             </div>
           )}
           {errorMsg && (
@@ -78,7 +81,8 @@ const RegisterView = () => {
             </div>
           )}
           
-          <form onSubmit={handleSubmit}>
+          {!success && (
+            <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="idMaquina">ID Máquina:</label>
               <input 
@@ -152,6 +156,7 @@ const RegisterView = () => {
               {loading ? 'Guardando...' : '✓ Confirmar Registro'}
             </button>
           </form>
+          )}
         </div>
       </div>
     </>
