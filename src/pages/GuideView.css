@@ -132,3 +132,42 @@
   background-color: var(--primary-blue);
   color: var(--white);
 }
+
+/* Image Zoom Modal */
+.image-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  cursor: zoom-out;
+}
+.image-zoom-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.image-zoomed {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.image-zoom-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}

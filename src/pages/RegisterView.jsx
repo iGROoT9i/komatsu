@@ -174,7 +174,7 @@ const RegisterView = () => {
       {success && (
         <div className="success-modal-overlay">
           <div className="success-modal-content">
-            <img src="/images/success_meme.png" alt="Éxito" className="success-image-meme" />
+            <img src="/images/success_meme.webp" alt="Éxito" className="success-image-meme" />
             <h2 className="success-modal-title">¡Registro Exitoso!</h2>
             <p className="success-modal-text">Volviendo al inicio en unos segundos...</p>
           </div>
