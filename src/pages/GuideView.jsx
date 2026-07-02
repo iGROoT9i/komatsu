@@ -27,7 +27,7 @@ const stepsData = [
   {
     number: 4,
     title: "Extracción de Purga",
-    description: "Gire manivela a POSICIÓN A (izquierda) para purgar flujo. Llene frasco de descarte usando la manguera de purga dedicada.",
+    description: "Gire manivela a POSICIÓN A (izquierda) para purgar flujo. Llene frasco de descarte usando la manguera de purga dedicada. Deje fluir el aceite hasta alcanzar un nivel de 50 ml a 75 ml.",
     imageUrl: "/images/step4.webp"
   },
   {
@@ -39,7 +39,7 @@ const stepsData = [
   {
     number: 6,
     title: "Extracción de muestra KOWA",
-    description: "Gire a POSICIÓN B (derecha) para capturar Muestra KOWA. Use la manguera de muestra limpia y dedicada.",
+    description: "Gire a POSICIÓN B (derecha) para capturar Muestra KOWA. Use la manguera de muestra limpia y dedicada. Llene el Frasco exactamente hasta la marca de los 100 ml kowa.",
     imageUrl: "/images/step6.webp"
   },
   {
