@@ -14,33 +14,39 @@ const stepsData = [
   },
   {
     number: 2,
-    title: "Acople de Manguera Intermedia",
-    description: "Conectar la Manguera de Interconexión (Minimess) entre la válvula de la máquina y la entrada del colector prototipo.",
+    title: "Limpiado exterior de la válvula de muestra",
+    description: "Limpie el exterior de la válvula 'Minimess' en la excavadora PC360LC-11 con un paño limpio. Retire el capuchón protector.",
     imageUrl: "/images/step2.png"
   },
   {
     number: 3,
-    title: "Purga (con Manguera de Purga)",
-    description: "Gire manivela a POSICIÓN A (izquierda) para purgar flujo. Llene frasco de descarte usando la manguera de purga dedicada.",
+    title: "Acople de Manguera Intermedia",
+    description: "Conectar la Manguera de Interconexión (Minimess) entre la válvula de la máquina y la entrada del colector prototipo.",
     imageUrl: "/images/step3.png"
   },
   {
     number: 4,
-    title: "Cambio de Manguera (Paso Nuevo)",
-    description: "Desconectar manguera de purga usada. Conectar una manguera de muestra limpia y dedicada para la toma de muestra KOWA.",
+    title: "Purga (con Manguera de Purga)",
+    description: "Gire manivela a POSICIÓN A (izquierda) para purgar flujo. Llene frasco de descarte usando la manguera de purga dedicada.",
     imageUrl: "/images/step4.png"
   },
   {
     number: 5,
-    title: "Muestra KOWA",
-    description: "Gire a POSICIÓN B (derecha) para capturar Muestra KOWA. Use la manguera de muestra limpia y dedicada.",
+    title: "Cambio de Manguera (Paso Nuevo)",
+    description: "Desconectar manguera de purga usada. Conectar una manguera de muestra limpia y dedicada para la toma de muestra KOWA.",
     imageUrl: "/images/step5.png"
   },
   {
     number: 6,
+    title: "Muestra KOWA",
+    description: "Gire a POSICIÓN B (derecha) para capturar Muestra KOWA. Use la manguera de muestra limpia y dedicada.",
+    imageUrl: "/images/step6.png"
+  },
+  {
+    number: 7,
     title: "Desconexión & Sellado",
     description: "Retire el colector de la máquina. Desenrosque y tape inmediatamente el Frasco B (Muestra) con su sello de seguridad.",
-    imageUrl: "/images/step6.png"
+    imageUrl: "/images/step7.png"
   }
 ];
 

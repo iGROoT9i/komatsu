@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { supabase } from '../supabaseClient';
+import confetti from 'canvas-confetti';
 import './RegisterView.css';
 
 const RegisterView = () => {
@@ -25,6 +26,24 @@ const RegisterView = () => {
     });
   };
 
+  const fireConfetti = () => {
+    var duration = 3 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 10000 };
+
+    var interval = setInterval(function() {
+      var timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      var particleCount = 50 * (timeLeft / duration);
+      // since particles fall down, start a bit higher than random
+      confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+    }, 250);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -32,7 +51,6 @@ const RegisterView = () => {
     setSuccess(false);
 
     try {
-      // Assuming a table named 'muestras_kowa' exists in Supabase
       const { data, error } = await supabase
         .from('muestras_kowa')
         .insert([
@@ -48,11 +66,13 @@ const RegisterView = () => {
       if (error) throw error;
       
       setSuccess(true);
-      // Reset form or navigate away after a delay
-      setTimeout(() => navigate('/'), 3000);
+      fireConfetti();
+      
+      // Auto close and redirect after 4 seconds
+      setTimeout(() => navigate('/'), 4000);
     } catch (error) {
       console.error('Error guardando los datos:', error);
-      setErrorMsg('Error al conectar con la base de datos o guardar el registro. Verifique que la tabla "muestras_kowa" exista.');
+      setErrorMsg('Error al conectar con la base de datos o guardar el registro.');
     } finally {
       setLoading(false);
     }
@@ -67,22 +87,13 @@ const RegisterView = () => {
         </button>
         
         <div className="form-card">
-          {success && (
-            <div className="success-container">
-              <img src="/images/success.png" alt="Éxito" className="success-image" />
-              <div className="success-msg">
-                ✅ ¡Registro guardado exitosamente! Volviendo al inicio...
-              </div>
-            </div>
-          )}
           {errorMsg && (
             <div className="error-msg">
               ❌ {errorMsg}
             </div>
           )}
           
-          {!success && (
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="idMaquina">ID Máquina:</label>
               <input 
@@ -156,9 +167,19 @@ const RegisterView = () => {
               {loading ? 'Guardando...' : '✓ Confirmar Registro'}
             </button>
           </form>
-          )}
         </div>
       </div>
+
+      {/* Success Modal */}
+      {success && (
+        <div className="success-modal-overlay">
+          <div className="success-modal-content">
+            <img src="/images/success_meme.png" alt="Éxito" className="success-image-meme" />
+            <h2 className="success-modal-title">¡Registro Exitoso!</h2>
+            <p className="success-modal-text">Volviendo al inicio en unos segundos...</p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
